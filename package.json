@@ -15,6 +15,14 @@
     "@nuxt/eslint-config": "^0.1.1",
     "eslint": "^8.28.0",
     "nuxt": "^3.6.2",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+
+    "@nuxtjs/tailwindcss": "^6.11.3",
+    "nuxt-headlessui": "^1.1.5",
+    "nuxt-icon": "^0.6.8",
+    "nuxt-mapbox": "^1.5.8"
+  },
+  "dependencies": {
+    "@formkit/auto-animate": "^0.8.1"
   }
 }
