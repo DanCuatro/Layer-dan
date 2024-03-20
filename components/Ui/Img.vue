@@ -13,6 +13,7 @@
       const first4 = src.slice(0, 4);
       const env = useRuntimeConfig();
       const bucket = env.public.bucket;
+      console.log(bucket)
       return first4 == 'http' ? src : bucket + src;
     }
 
