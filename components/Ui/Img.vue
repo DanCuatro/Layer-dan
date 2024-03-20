@@ -1,4 +1,5 @@
 <script setup>
+    
     const props = defineProps({
         src:{
             type: String,
@@ -6,7 +7,7 @@
         }
     })
 
-    export function srcImage(src) {
+    function srcImage(src) {
       const defaultImage ='https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png';
       const isString = typeof src === 'string' || src instanceof String;
       if (!isString) return defaultImage;
