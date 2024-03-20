@@ -1,6 +1,4 @@
 <script setup>
-    // import { composable } from '@/mod/mod'; // Importa la función srcImage desde tu archivo imageUtils.js
-
     const props = defineProps({
         src:{
             type: String,
@@ -8,11 +6,18 @@
         }
     })
 
-    // const processedSrc = computed(() => {
-    //     return composable.utils.srcImage(props.src);
-    // });
+    export function srcImage(src) {
+      const defaultImage ='https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png';
+      const isString = typeof src === 'string' || src instanceof String;
+      if (!isString) return defaultImage;
+      const first4 = src.slice(0, 4);
+      const env = useRuntimeConfig();
+      const bucket = env.public.bucket;
+      return first4 == 'http' ? src : bucket + src;
+    }
+
     const processedSrc = computed(() => {
-        return props.src;
+        return srcImage(props.src);
     });
 </script>
 
