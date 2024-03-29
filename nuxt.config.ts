@@ -11,7 +11,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
         bucket: process.env.NUXT_PUBLIC_BUCKET,
+        apiBase: process.env.NUXT_PUBLIC_API_BASE,
     },
-},
+  },
+  devServer: {
+    port: process.env.NUXT_PUBLIC_PORT || 3000
+  },
   devtools: { enabled: true }
 })
