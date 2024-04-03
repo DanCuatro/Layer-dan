@@ -1,4 +1,4 @@
-import LocalStorage from './LocalStorage.ts'
+import LocalStorage from './LocalStorage'
 // Función para realizar el inicio de sesión
 async function login(username: string, password: string): void {
   const res = await rest({
@@ -10,8 +10,7 @@ async function login(username: string, password: string): void {
     }
   });
   const authToken = res.data; // Este sería el token generado tras la autenticación
-  const save = LocalStorage.save('authToken',authToken); // Guarda el token en el almacenamiento local
-  return save;
+  LocalStorage.save('authToken',authToken); // Guarda el token en el almacenamiento local
 }
 
 // Función para realizar el cierre de sesión

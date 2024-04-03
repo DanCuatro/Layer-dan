@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     'nuxt-headlessui',
     '@formkit/auto-animate/nuxt',
     'nuxt-icon',
+    '@pinia/nuxt',
   ],
   runtimeConfig: {
     public: {
