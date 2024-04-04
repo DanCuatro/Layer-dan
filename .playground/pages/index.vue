@@ -1,6 +1,9 @@
 <script setup>
   import { useCounterStore } from '@/stores/counter'
   const counter = useCounterStore()
+  const store = Stores
+  // const useCounterStore = store.useCounterStore()
+  console.log(store)
 </script>
 
 <template>
