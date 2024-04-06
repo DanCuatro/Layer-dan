@@ -2,12 +2,19 @@ export default async function(request: {
   endpoint: string,
   method: string,
   body?: any,
-  headers?: any
+  headers?: any,
+  query?: Record<string, string>
 }) {
   try {
     const env = useRuntimeConfig();
     const apiBase = env.public.apiBase;
-    const url = `${apiBase}${request.endpoint}`;
+    let url = `${apiBase}${request.endpoint}`;
+
+    // Agregar parámetros de query si se proporcionan
+    if (request.query) {
+      const queryParams = new URLSearchParams(request.query);
+      url += `?${queryParams.toString()}`;
+    }
 
     const defaultHeaders = {
       'Content-Type': 'application/json',

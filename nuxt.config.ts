@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@pinia/nuxt',
   ],
+  headlessui: {
+    prefix: 'Headless'
+  },
   runtimeConfig: {
     public: {
         bucket: process.env.NUXT_PUBLIC_BUCKET,
