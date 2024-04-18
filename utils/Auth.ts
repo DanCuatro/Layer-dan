@@ -1,6 +1,8 @@
 import LocalStorage from './LocalStorage'
+import { useRouter } from 'vue-router';
+const router = useRouter();
 // Función para realizar el inicio de sesión
-async function login(username: string, password: string): void {
+async function login(username: string, password: string): Promise<void> {
   const res = await rest({
     endpoint: '/api/auth/login',
     method: 'POST',
@@ -14,7 +16,7 @@ async function login(username: string, password: string): void {
 }
 
 // Función para realizar el cierre de sesión
-function logout(): void {
+async function logout(): Promise<void> {
   LocalStorage.remove('authToken'); // Elimina el token del almacenamiento local al cerrar sesión
 }
 

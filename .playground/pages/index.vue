@@ -1,14 +1,15 @@
 <script setup>
-  import { useCounterStore } from '@/stores/counter'
-  const counter = useCounterStore()
-  const store = Stores
-  // const useCounterStore = store.useCounterStore()
-  console.log(store)
+  const currenPage = ref(1)
+  const pageSize = ref(12)
+  const total = ref(301)
 </script>
 
 <template>
   <div>
-    <div>Current Count: {{ counter.count }}</div>
-    <button @click="counter.increment()">Click</button>
+    <UiPagination
+      :currentPage="currenPage"
+      :pageSize="pageSize"
+      :total="total"
+      />
   </div>
 </template>
