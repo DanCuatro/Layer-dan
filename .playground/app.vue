@@ -1,6 +1,5 @@
 <script setup>
-
-  // })
+  const p = useCounterStore()
 </script>
 
 <template>

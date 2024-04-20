@@ -1,4 +1,4 @@
-const useCounterStore = defineStore('counter', {
+export const useCounterStore = defineStore('counter', {
   state: () => {
     return { count: 0 }
   },
@@ -10,4 +10,4 @@ const useCounterStore = defineStore('counter', {
     },
   },
 })
-export default { useCounterStore };
+// export default { useCounterStore };
